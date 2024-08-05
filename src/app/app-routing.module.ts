@@ -4,31 +4,30 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'splash',
+    redirectTo: 'contact',
     pathMatch: 'full'
   },
   {
-    path: 'splash',
-    loadChildren: () => import('./template/splash/splash.module').then(m => m.SplashPageModule)
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
   {
-    path: 'welcome',
-    loadChildren: () => import('./template/welcome/welcome.module').then(m => m.WelcomePageModule)
+    path: 'create-an-account',
+    loadChildren: () => import('./create-an-account/create-an-account.module').then( m => m.CreateAnAccountPageModule)
   },
   {
-    path: 'loginpage',
-    loadChildren: () => import('./template/loginpage/loginpage.module').then(m => m.LoginpagePageModule)
+    path: 'forgot',
+    loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./template/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  }
-];
-
+    path: 'search-result',
+    loadChildren: () => import('./search-result/search-result.module').then( m => m.SearchResultPageModule)
+  },
+ ];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

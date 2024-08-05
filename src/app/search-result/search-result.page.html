@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-searchbar placeholder="Search"></ion-searchbar>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Recent Searches</ion-label>
+    </ion-item>
+    <!-- Add recent search items here -->
+    <ion-item *ngFor="let search of recentSearches">
+      {{ search }}
+    </ion-item>
+  </ion-list>
+</ion-content>
