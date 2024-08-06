@@ -16,7 +16,7 @@ export class SplashPage implements OnInit {
     // Navigate to the home page after 3 seconds
     setTimeout(() => {
       this.router.navigateByUrl('/welcome');
-    }, 5000); // Adjust the time as needed
+    }, 3000); // Adjust the time as needed
   }
 
 }

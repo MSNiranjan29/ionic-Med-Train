@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+  <div class="back-button" (click)="goBack()">
+    <img src="/assets/search/back.png" alt="search icon" class="recent-search-icon"/>
+  </div>
+  <div class="search-bar">
+    
+    <ion-searchbar [(ngModel)]="searchQuery" placeholder="Search" (ionChange)="performSearch($event)"></ion-searchbar>
+
+  </div>
+
+  <div class="rec-search">
+  <ion-list *ngIf="recentSearches.length > 0">
+    <ion-item-divider>Recent searches</ion-item-divider>
+    <ion-item *ngFor="let search of recentSearches" (click)="navigateToSearch(search)">
+      <img src="/assets/search/search-back.svg" alt="search icon" class="recent-search-icon"/>
+      <span>{{ search }}</span>
+    </ion-item>
+  </ion-list>
+  </div>
+</ion-content>

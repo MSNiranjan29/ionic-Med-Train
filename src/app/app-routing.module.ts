@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./template/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./template/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./template/notification/notification.module').then( m => m.NotificationPageModule)
   }
 ];
 

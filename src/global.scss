@@ -25,22 +25,87 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
-
 
 
 :root {
     --color: black;
     --font-size: 18px;
     --font-weight: bold;
+    --background-color: #fff;
   }
   
+  /* Global overlay styles */
+/* Global overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0.2, 0.2); /* Dark background with transparency */
+  backdrop-filter: blur(2.5px); /* Blur effect for background */
+  z-index: 999; /* Ensure it's above other content */
+  display: none; /* Initially hidden */
+}
+
+/* Show the overlay when the alert is active */
+.show-overlay .overlay {
+  display: block;
+}
+
+/* Existing custom alert styles */
+.custom-alert .alert-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 300px;
+  border-radius: 40pt 40pt 0 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column; /* Ensure the alert content is stacked vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  z-index: 1000; /* Ensure the alert is above the overlay */
+}
+
+.custom-alert .alert-head,
+.custom-alert .alert-message {
+  width: 100%; /* Ensure text spans the full width */
+  text-align: left; /* Align text to the left */
+}
+
+.custom-alert .alert-button {
+  width: 100%; /* Ensure buttons span the full width */
+  margin: 5px 0; /* Adjust spacing as needed */
+  border-radius: 5px;
+  background-color: #ff6600;
+  color: white;
+  text-align: center; /* Center button text horizontally */
+  display: block; /* Ensure button takes up full width */
+}
+
+.custom-alert .alert-button-role-cancel {
+  background-color: transparent;
+  color: #888;
+}
+.later-login{
+  color: #0974B9;
+}
+
+.custom-alert .alert-button-group {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  width: 100%; /* Ensure button group spans the full width */
+  align-items: center; /* Center buttons horizontally */
+}
+.alert-button-inner.sc-ion-alert-md {
+  -ms-flex-pack: end;
+  height: 25px!important;
+  justify-content: center!important;
+}

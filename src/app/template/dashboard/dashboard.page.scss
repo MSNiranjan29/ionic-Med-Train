@@ -1,15 +1,36 @@
-/* dashboard.page.scss */
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  margin: -25px;
-  margin-left: -48px;
-  z-index: 10;
+/* Apply border-right-radius to the ion-menu */
+ion-menu {
+  --border-radius: 0; /* Remove any default border-radius */
 }
+
+ion-menu .menu-content {
+  border-top-right-radius: 16px; /* Adjust as needed */
+  border-bottom-right-radius: 16px; /* Adjust as needed */
+}
+
+/* Additional styles to ensure the menu looks good */
+.menu-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  background-color: #0974B9;
+}
+/* Increase icon size and set button color */
+ion-button {
+  --color: #0974B9; /* Button text color */
+  --background: transparent; /* Remove button background */
+  --border-color: #0974B9; /* Set border color if applicable */
+}
+
+ion-icon {
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #0974B9; /* Set icon color */
+}
+
+
+
 /* Ensure the ion-toolbar is positioned relative for absolute positioning inside it */
 ion-toolbar {
   position: relative;
@@ -31,6 +52,23 @@ ion-toolbar .menu-button {
   border: none; /* Remove any borders if present */
 }
 
+.arrow-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotated {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu.show {
+  display: block;
+}
 
 /* General style for icons and labels */
 .tab-icon {
@@ -49,9 +87,6 @@ ion-tab-button.ion-tab-button-active ion-label {
   font-weight: bold; /* Make the label bold */
   font-size: 14px; /* Adjust font size as needed */
 }
-// ion-label{
-  // text-decoration:;
-// }
 
 /* Style for icon within the active tab */
 ion-tab-button.ion-tab-button-active .tab-icon {
