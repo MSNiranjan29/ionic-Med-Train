@@ -15,14 +15,20 @@ const routes: Routes = [
     path: 'create-an-account',
     loadChildren: () => import('./create-an-account/create-an-account.module').then( m => m.CreateAnAccountPageModule)
   },
+  
   {
     path: 'forgot',
     loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
-  },
+  }, 
   {
     path: 'search-result',
     loadChildren: () => import('./search-result/search-result.module').then( m => m.SearchResultPageModule)
   },
+  {
+    path: 'search-details',
+    loadChildren: () => import('./search-details/search-details.module').then( m => m.SearchDetailsPageModule)
+  }
+
  ];
 @NgModule({
   imports: [

@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: CreateAnAccountPage
   },
+  {
+    path: 'search-result',
+    loadChildren:()=> import('../search-result/search-result-routing.module').then(m => m.SearchResultPageRoutingModule)
+  }
 ];
 
 @NgModule({

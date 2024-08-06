@@ -30,4 +30,8 @@ export class CreateAnAccountPage {
     // Implement the action for the back button
     this.navCtrl.back();
   }
+  onGetStarted() {
+    // Handle forgot password logic here
+    this.navCtrl.navigateForward('/search-result');
+  }
 }

@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: ForgotPage
   },
+  {
+    path: 'search-details',
+    loadChildren: () => import('../search-details/search-details.module').then(m => m.SearchDetailsPageModule)
+  }
 ];
 
 @NgModule({

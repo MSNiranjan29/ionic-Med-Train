@@ -22,6 +22,10 @@ export class ForgotPage {
       console.log('Forgot password request submitted!');
     }
   }
+  onSend()  {
+    // Handle forgot password logic here
+    this.navCtrl.navigateForward('/search-details');
+  }
 
   onBack() {
     // Implement the action for the back button

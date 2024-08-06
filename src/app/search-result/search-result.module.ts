@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { SearchResultPageRoutingModule } from './search-result-routing.module';
+import { RouterModule } from '@angular/router';
 
 import { SearchResultPage } from './search-result.page';
 
@@ -13,8 +11,13 @@ import { SearchResultPage } from './search-result.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchResultPageRoutingModule
+    RouterModule.forChild([
+      {
+        path: '',
+        component: SearchResultPage
+      }
+    ])
   ],
   declarations: [SearchResultPage]
 })
-export class SearchResultPageModule {}
+export class SearchResultPageModule { }
