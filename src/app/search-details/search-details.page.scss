@@ -1,0 +1,76 @@
+.course-header {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .back-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      ion-back-button {
+        color: white;
+        font-size: 24px;
+      }
+    }
+    .course-stats {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-around;
+      width: 100px;
+      ion-icon {
+        font-size: 24px;
+        color: white;
+      }
+    }
+  }
+  
+  .course-details {
+    padding: 30px;
+    h2 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+    h3 {
+      font-size: 16px;
+      color: grey;
+      margin-top: 0.5em;
+    }
+    ion-item {
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      --min-height: 40px;
+      ion-icon {
+        margin-right: 8px;
+      }
+      ion-label {
+        font-size: 1em;
+      }
+    }
+  }
+  
+  .learner-info {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    .learners {
+      display: flex;
+      ion-avatar {
+        margin-right: -10px; /* Adjust for overlap */
+        border: 2px solid white;
+        width: 40px; /* Adjust the size */
+        height: 40px; /* Adjust the size */
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    ion-label {
+      margin-left: 10px;
+    }
+  }
+  
