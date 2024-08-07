@@ -1,15 +1,17 @@
 <ion-content>
   <div class="image-container">
-    <ion-img src="/assets/welcome/logo.png" alt="MedTrain-Logo" class="top-image"></ion-img>
-    <ion-img src="/assets/welcome/Medtrain.png" alt="MedTrain" class="bottom-image"></ion-img>
+    <ion-img src="assets/logo.png" alt="MedTrain-Logo" class="top-image"></ion-img>
+    <ion-img src="/assets/welcome/Medtrain/Medtrain@3x.png" alt="MedTrain" class="bottom-image"></ion-img>
   </div>
   <div class="body-container">
-    <ion-button size="large" class="signup-button">
+    <ion-button size="large" class="signup-button" (click)="onSignUp()">
       <ion-icon name="mail-outline" slot="start"></ion-icon>
       Sign up with email
     </ion-button>
     <div class="login-container">
-      <span>Sign up instead &nbsp;&nbsp;&nbsp;<span class="bullet-point">•</span>&nbsp;<a routerLink="/dashboard">Skip for now</a></span><br/>
-      </div>
+      <span>Sign up instead &nbsp;&nbsp;&nbsp;<span class="bullet-point">•</span>&nbsp;
+        <a routerLink="/dashboard">Skip for now</a>
+      </span><br/>
     </div>
+  </div>
 </ion-content>

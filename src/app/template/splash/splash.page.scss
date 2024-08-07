@@ -1,42 +1,50 @@
 ion-content {
-    --ion-background-color: #0974B9; /* Apply using Ionic's CSS variable */
-    background-color: #0974B9 !important; /* Ensure the background color is applied */
-    --padding-start: 0;
-    --padding-end: 0;
-    --padding-top: 0;
-    --padding-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  --ion-background-color: #0974B9; /* Apply using Ionic's CSS variable */
+  background-color: #0974B9 !important; /* Ensure the background color is applied */
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Parent container for the image */
 /* Parent container for the main image and overlay */
 .splash-img-container {
-    position: relative; /* Establish positioning context */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Ensure the container has full height */
-    width: 100%; /* Ensure the container uses full width */
-    overflow: hidden; /* Hide any overflow content */
-  }
-  
-  /* Main image styling */
-  .splash-img {
-    max-width: 100%; /* Ensure the main image fits within the container */
-    max-height: 100%; /* Ensure the main image doesn't overflow vertically */
-    object-fit: contain; /* Maintain aspect ratio */
-  }
-  
-  /* Overlay image styling */
-  .overlay-img {
-    position: absolute; /* Position the overlay image relative to the container */
-    width: 30%; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Truly center the image */
-    padding-left: 10%;
-  }
-  
+  position: relative; /* Establish positioning context */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container has full height */
+  width: 100%; /* Ensure the container uses full width */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+/* Main image styling */
+.splash-img {
+  max-width: 100%; /* Ensure the main image fits within the container */
+  max-height: 100%; /* Ensure the main image doesn't overflow vertically */
+  object-fit: contain; /* Maintain aspect ratio */
+  position: relative; /* Position relatively to set z-index */
+  z-index: 1; /* Ensure the splash image is above the mask image */
+}
+/* Overlay image styling */
+.overlay-img {
+  position: absolute; /* Position the overlay image relative to the container */
+  width: 30%; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Truly center the image */
+  z-index: 2; /* Ensure overlay image is above the mask image */
+}
+
+/* Mask image styling */
+.mask-img {
+  position: absolute;
+  bottom: -15px; /* Move the image 10px more to the bottom */
+  left: -15px;   /* Move the image 10px more to the left */
+  z-index: 0;    /* Ensure mask image is below the splash image */
+}
+

@@ -30,6 +30,35 @@ const routes: Routes = [
   {
     path: 'notification',
     loadChildren: () => import('./template/notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./template/contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'create-an-account',
+    loadChildren: () => import('./template/create-an-account/create-an-account.module').then( m => m.CreateAnAccountPageModule)
+  },
+  
+  {
+    path: 'forgot',
+    loadChildren: () => import('./template/forgot/forgot.module').then( m => m.ForgotPageModule)
+  }, 
+  {
+    path: 'search-result',
+    loadChildren: () => import('./template/search-result/search-result.module').then( m => m.SearchResultPageModule)
+  },
+  {
+    path: 'search-details',
+    loadChildren: () => import('./template/search-details/search-details.module').then( m => m.SearchDetailsPageModule)
+  },
+  {
+    path: 'create-an-account1',
+    loadChildren: () => import('./template/create-an-account1/create-an-account1.module').then( m => m.CreateAnAccount1PageModule)
+  },
+  {
+    path: 'country-code-modal',
+    loadChildren: () => import('./template/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
   }
 ];
 

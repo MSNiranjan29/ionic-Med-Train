@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="outer-container">
+    <div class="blue-container">
+      <ion-button class="back-button" (click)="onBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <div class="white-container">
+        <img src="/assets/logo.png" alt="Logo" class="logo-image">
+      </div>
+    </div>
+    <div class="form-container">
+      <h2 class="forgot-title">
+        <span class="forgot-white">Forgot</span> <span class="forgot-orange"> Password</span>
+      </h2>
+      <form [formGroup]="forgotForm" (ngSubmit)="onForgotPassword()">
+        <div class="email-label">
+          Enter your email id
+        </div>
+        <div class="form-content">
+          <ion-item class="custom-input">
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input formControlName="email"></ion-input>
+          </ion-item>
+          <div class="button-container">
+            <ion-button expand="block" class="reset-password-button" color=" " (click)="onSend()">Send</ion-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
