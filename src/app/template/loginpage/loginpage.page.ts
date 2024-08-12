@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loginpage',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginpagePage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
-    console.log("Hello World")
+    console.log("Hello World");
+  }
+
+  onSignUp() {
+    // Navigate to the create-an-account page
+    this.navCtrl.navigateForward('/create-an-account');
   }
 
 }

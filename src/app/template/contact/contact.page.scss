@@ -1,0 +1,127 @@
+ion-content {
+  background-color: #0974B9;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.blue-container {
+  background-color: #0974B9;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  --background: #EA6B23; /* Orange background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white; /* White border */
+  font-size: 18px;
+  z-index: 2;
+}
+
+.white-container {
+  background-color: white;
+  padding: 20px;
+  border-bottom-right-radius: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: 130px;
+}
+
+.form-container {
+  background-color: #0974B9;
+  padding: 20px;
+  border-top-left-radius: 40px;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+h2 {
+
+  margin-top: 40px;
+  color: white;
+  text-align: left;
+  margin-left: 8%;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+form {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+
+ion-item {
+  margin-bottom: 20px;
+}
+
+.custom-input {
+  border: 1px solid #ccc; /* Add border to input fields */
+  border-radius: 20px; /* Add border radius to input fields */
+  background-color: #ffffff; /* Set background color to white */
+}
+
+.custom-input ion-input {
+  padding-left: 10px; /* Add padding to input text */
+}
+
+.forgot-password-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  margin-bottom: 20px;
+}
+
+.forgot-password-button {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: white; /* Set text color */
+  cursor: pointer; /* Change cursor to pointer */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px;
+}
+
+.forgot-password-button:focus, .forgot-password-button:active {
+  text-decoration: underline; /* Add underline on focus and active */
+}
+
+.button-container {
+  justify-content: center; /* Center the button */
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #EA6B23;
+  
+}
+
+ion-button.next-button {
+  width: 100%;
+  font-weight: bold;
+  height: 50px;
+}

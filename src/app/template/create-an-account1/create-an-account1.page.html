@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="outer-container">
+    <div class="blue-container">
+      <div class="back-button" (click)="onBack()">
+        <img src="/assets/search/back.png" alt="back icon" class="recent-search-icon"/>
+      </div>
+      <div class="white-container">
+        <img src="/assets/logo.png" alt="Logo" class="logo-image">
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="forgot-title">
+        <h2>
+          <span class="forgot-white"><b>One Last</b></span>
+          <span class="forgot-orange">&nbsp;<b>Thing</b></span>
+        </h2>
+        <div class="number-label">
+          <h6>Fields marked with * are mandatory</h6>
+        </div>
+      </div>
+      
+      <form [formGroup]="mobileForm" (ngSubmit)="onSend()">
+        <div class="form-content">
+          <label class="mobile-label">Mobile*</label>
+          <ion-item class="custom-input">
+            <ion-button (click)="openCountryCodeModal()">
+              {{ mobileForm.get('countryCode')?.value }}
+            </ion-button>
+            <ion-input formControlName="mobile" type="tel"></ion-input>
+          </ion-item>
+          <div class="button-container">
+            <ion-button expand="block" class="submit-button" type="submit" color="primary">Send</ion-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

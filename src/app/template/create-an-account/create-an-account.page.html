@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="outer-container">
+    <div class="blue-container">
+      <ion-button class="back-button" (click)="onBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <div class="white-container">
+        <img src="assets/images/-logo4.png" alt="Logo" class="logo-image">
+      </div>
+    </div>
+    
+    <div class="form-container">
+      <h2 class="create-account-title">
+        <span class="create-account-white">Create an</span> <span class="create-account-orange"> Account</span>
+      </h2>
+      <form [formGroup]="createAnAccountForm" (ngSubmit)="onCreateAccount()">
+        <ion-item class="custom-input">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="name"></ion-input>
+        </ion-item>
+               <ion-item class="custom-input">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+          <ion-icon name="at-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item class="custom-input">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item class="custom-input">
+          <ion-label position="floating">Re-Password</ion-label>
+          <ion-input type="password" formControlName="rePassword"></ion-input>
+        </ion-item>
+        <div class="button-container">
+          <ion-button expand="block" class="get-started-button" color=" "(click)="onGetStarted()">Get Started</ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

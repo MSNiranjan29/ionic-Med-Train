@@ -1,0 +1,42 @@
+ion-content {
+    padding: 16px; /* Adjust the padding value as needed */
+  }
+  
+  .select-code {
+    padding-left: 16px;
+    text-align: start;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .search-bar {
+    padding-top: 25px;
+  }
+  
+  ion-searchbar {
+    height: 65px; /* Adjust this value to increase the height */
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid #0974B9; /* Add a border with color */
+    width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the search bar horizontally */
+    --background: transparent; /* Remove default background color */
+    --box-shadow: none; /* Remove default box shadow */
+    --padding-start: 16px; /* Adjust padding inside the search bar */
+    --padding-end: 16px; /* Adjust padding inside the search bar */
+    --icon-color: #0974B9; /* Change the color of the search icon */
+  }
+  
+  .rec-search {
+    margin-top: 15px;
+  }
+  
+  .recent-search-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  ion-list {
+    margin-bottom: 15px;
+  }
+  
