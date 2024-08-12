@@ -1,0 +1,96 @@
+/* Apply border-right-radius to the ion-menu */
+ion-menu {
+  --border-radius: 0; /* Remove any default border-radius */
+}
+
+ion-menu .menu-content {
+  border-top-right-radius: 16px; /* Adjust as needed */
+  border-bottom-right-radius: 16px; /* Adjust as needed */
+}
+
+/* Additional styles to ensure the menu looks good */
+.menu-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  background-color: #0974B9;
+}
+/* Increase icon size and set button color */
+ion-button {
+  --color: #0974B9; /* Button text color */
+  --background: transparent; /* Remove button background */
+  --border-color: #0974B9; /* Set border color if applicable */
+}
+
+ion-icon {
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #0974B9; /* Set icon color */
+}
+
+
+
+/* Ensure the ion-toolbar is positioned relative for absolute positioning inside it */
+ion-toolbar {
+  position: relative;
+}
+
+/* More specific selector for the menu button */
+ion-toolbar .menu-button {
+  position: absolute;
+  left: 50px; /* Adjust this value to place the menu button next to the logo */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 20; /* Ensure it is above other elements */
+  
+  /* Override default styles */
+  --background: transparent; /* Remove default background */
+  --color: #000000; /* Set custom icon color */
+  margin-left: 25px; /* Reset margin */
+  padding: 0; /* Reset padding */
+  border: none; /* Remove any borders if present */
+}
+
+.arrow-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotated {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* General style for icons and labels */
+.tab-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Style for active tab button */
+ion-tab-button.ion-tab-button-active {
+  --color: #0974B9; /* Change icon and label color for active state */
+}
+
+/* Style for label within the active tab */
+ion-tab-button.ion-tab-button-active ion-label {
+  color: #0974B9; /* Change label color for active state */
+  font-weight: bold; /* Make the label bold */
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+/* Style for icon within the active tab */
+ion-tab-button.ion-tab-button-active .tab-icon {
+  width: 24px; /* Ensure width is consistent */
+  height: 24px; /* Ensure height is consistent */
+  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}

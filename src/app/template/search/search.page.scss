@@ -1,0 +1,59 @@
+ion-content {
+    --background: #ffffff;
+    padding: 12% 0 10% 25%;
+
+  
+    .back-button {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    ion-icon {
+      font-size: 25px;
+      color: #ff9900;
+    }
+  .search-bar{
+    padding-top: 25px;
+}
+    ion-searchbar {
+        height: 65px; /* Adjust this value to increase the height */
+        border-radius: 20px; /* Rounded corners */
+        border: 2px solid #0974B9; /* Add a border with color #ccc */
+        width: 90%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the search bar horizontally */
+        --background: transparent; /* Remove default background color */
+        --box-shadow: none; /* Remove default box shadow */
+        --padding-start: 16px; /* Adjust padding inside the search bar */
+        --padding-end: 16px; /* Adjust padding inside the search bar */
+        --icon-color: #0974B9; /* Change the color of the search icon */
+
+      }
+  
+    ion-button {
+      margin: 10px;
+    }
+  
+    ion-item-divider {
+      font-weight: bold;
+      --color:#000;
+      margin-top: 20px;
+    }
+  
+    ion-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+  
+      .recent-search-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .rec-search{
+    margin: 0 7px 0 7px;
+    padding:0 7px 0 7px;
+  }
+  
