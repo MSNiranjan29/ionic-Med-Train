@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item>
+      <ion-buttons slot="start">
+        <ion-button (click)="goBack()" fill="clear">
+          <img src="/assets/search/back.png" alt="back icon" class="back-icon" />
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <ion-label>Bookmarks</ion-label>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar class="options-toolbar">
+  <ion-buttons class="full-width-buttons">
+    <ion-button 
+      [routerLink]="['/dashboard/questions']" 
+      routerLinkActive="active-button" 
+      (click)="navigateToQuestions()" 
+      class="option-button">
+      Questions
+    </ion-button>
+    <ion-button 
+      [routerLink]="['/dashboard/pdf']" 
+      routerLinkActive="active-button" 
+      (click)="navigateToPdf()" 
+      class="option-button">
+      PDFs
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bookmark</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

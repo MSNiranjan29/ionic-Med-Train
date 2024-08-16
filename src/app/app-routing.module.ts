@@ -59,6 +59,14 @@ const routes: Routes = [
   {
     path: 'country-code-modal',
     loadChildren: () => import('./template/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
+  },
+  {
+    path: 'bookmark',
+    loadChildren: () => import('./template/bookmark/bookmark.module').then( m => m.BookmarkPageModule)
+  },
+  {
+    path: 'archived-courses',
+    loadChildren: () => import('./template/archived-courses/archived-courses.module').then( m => m.ArchivedCoursesPageModule)
   }
 ];
 

@@ -1,28 +1,32 @@
 <ion-content>
-  <div class="select-code">
-    <p>Select Country</p>
-  </div>
+  <div class="main-content">
+      <div class="select-code">
+        <p>Select Country</p>
+      </div>
 
-  <div class="search-bar">
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterItems($event)"></ion-searchbar>
-  </div>
+      <div class="search-bar">
+        <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterItems($event)"></ion-searchbar>
+      </div>
 
-  <div class="rec-search">
-    <ion-list *ngIf="recentSearches.length > 0">
-      <ion-item-divider>Recent searches</ion-item-divider>
-      <ion-item *ngFor="let search of recentSearches" (click)="navigateToSearch(search)">
-        <img src="/assets/search/search-back.svg" alt="search icon" class="recent-search-icon"/>
-        <span>{{ search }}</span>
-      </ion-item>
-    </ion-list>
-  </div>
+      <div class="rec-search">
+        <ion-list *ngIf="recentSearches.length > 0">
+          <ion-item *ngFor="let search of recentSearches" (click)="navigateToSearch(search)">
+            <span>{{ search }}</span>
+          </ion-item>
+        </ion-list>
+      </div>
 
-  <ion-list>
-    <ion-item *ngFor="let country of filteredCountries" (click)="selectCountryCode(country)">
-      <ion-thumbnail slot="start">
-        <img [src]="country.flag">
-      </ion-thumbnail>
-      <ion-label>{{ country.name }} ({{ country.code }})</ion-label>
-    </ion-item>
-  </ion-list>
+      <ion-list>
+        <ion-item *ngFor="let country of filteredCountries" (click)="selectCountryCode(country)">
+          <ion-thumbnail slot="start">
+            <img [src]="country.flag">
+          </ion-thumbnail>
+          <ion-label>
+            <span class="country-name">{{ country.name }}</span>
+            <span class="country-code">{{ country.code }}</span>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      
+      </div>
 </ion-content>

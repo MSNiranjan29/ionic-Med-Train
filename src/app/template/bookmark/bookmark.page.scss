@@ -1,0 +1,78 @@
+ion-header, ion-toolbar {
+  --ion-background-color: #0974B9;
+  /* Header background color */
+  --background: #0974B9;
+  /* Fallback background color */
+  height: 75px;
+}
+
+ion-icon {
+  color: #fff;
+  /* Set text and icon color to white */
+  padding-left: 10px;
+  /* Padding for both icon and label */
+}
+
+ion-label {
+  --color: #fff;
+  /* Set the label color explicitly using CSS variable */
+  color: #fff;
+  /* Fallback color for the label */
+  padding-left: 5px;
+}
+
+/* Ensure label color in specific header context */
+ion-header ion-label {
+  --color: #fff;
+  /* Ensure white color inside header */
+  color: #fff;
+  /* Fallback for label inside header */
+  font-size: 14px;
+}
+
+.options-toolbar {
+  --ion-background-color: #0974B9;
+  /* Toolbar background color */
+  height: 50px;
+  /* Adjust toolbar height */
+  border-bottom: 2px solid #fff;
+  /* Optional: add border for separation */
+  position: absolute;
+  /* Position it below the header */
+  top: 75px;
+  /* Same height as the header */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  /* Ensure toolbar is above other content */
+}
+
+.full-width-buttons {
+  width: 100%;
+  /* Make sure buttons take up full width */
+  display: flex;
+  /* Use flex to control button layout */
+}
+
+.option-button {
+  flex: 1;
+  /* Distribute space equally between buttons */
+  color: #fff;
+  /* Ensure text is white */
+  --padding-start: 0;
+  --padding-end: 0;
+  text-align: center;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  /* Smooth transition for shadow and border effect */
+}
+
+.option-button:active {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.7);
+  /* White shadow effect */
+}
+
+.option-button.active-button {
+  border: 2px solid #fff;
+  /* White border for active button */
+}

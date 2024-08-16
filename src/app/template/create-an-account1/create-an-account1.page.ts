@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, ModalController } from '@ionic/angular';
-import { CountryCodeModalPage } from '../country-code-modal/country-code-modal.page';  // Adjust the path if necessary
+import { CountryCodeModalPage } from '../country-code-modal/country-code-modal.page';
 
 @Component({
   selector: 'app-create-an-account1',
@@ -9,13 +9,13 @@ import { CountryCodeModalPage } from '../country-code-modal/country-code-modal.p
   styleUrls: ['./create-an-account1.page.scss'],
 })
 export class CreateAnAccount1Page implements OnInit {
-  mobileForm!: FormGroup; // Use definite assignment assertion if needed
+  mobileForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder, 
     private navCtrl: NavController,
-    private modalCtrl: ModalController // Add ModalController to the constructor
-  ) { }
+    private modalCtrl: ModalController
+  ) {}
 
   ngOnInit() {
     this.mobileForm = this.formBuilder.group({
@@ -34,22 +34,32 @@ export class CreateAnAccount1Page implements OnInit {
   }
 
   onBack() {
-    // Implement the action for the back button
     this.navCtrl.back();
   }
-
   async openCountryCodeModal() {
+    // Add blur before presenting the modal
+    document.querySelector('ion-content')?.classList.add('blur-background');
+  
     const modal = await this.modalCtrl.create({
       component: CountryCodeModalPage,
-      cssClass: 'country-code-modal'
+      cssClass: 'country-code-modal',
+      backdropDismiss: true,
     });
-
-    modal.onDidDismiss().then((data) => {
-      if (data.data) {
-        this.mobileForm.patchValue({ countryCode: data.data.code });
+  
+    // Handle the result when the modal is dismissed
+    modal.onDidDismiss().then((result) => {
+      // Remove blur when the modal is dismissed
+      document.querySelector('ion-content')?.classList.remove('blur-background');
+      
+      // Check if a country was selected
+      if (result.data) {
+        const selectedCountry = result.data;
+        this.mobileForm.patchValue({ countryCode: selectedCountry.code });
       }
     });
-
-    return await modal.present();
+  
+    // Present the modal
+    await modal.present();
   }
+  
 }

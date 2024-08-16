@@ -1,42 +1,74 @@
 ion-content {
-    padding: 16px; /* Adjust the padding value as needed */
-  }
-  
-  .select-code {
-    padding-left: 16px;
-    text-align: start;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .search-bar {
-    padding-top: 25px;
-  }
-  
-  ion-searchbar {
-    height: 65px; /* Adjust this value to increase the height */
-    border-radius: 20px; /* Rounded corners */
-    border: 2px solid #0974B9; /* Add a border with color */
-    width: 90%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the search bar horizontally */
-    --background: transparent; /* Remove default background color */
-    --box-shadow: none; /* Remove default box shadow */
-    --padding-start: 16px; /* Adjust padding inside the search bar */
-    --padding-end: 16px; /* Adjust padding inside the search bar */
-    --icon-color: #0974B9; /* Change the color of the search icon */
-  }
-  
-  .rec-search {
-    margin-top: 15px;
-  }
-  
-  .recent-search-icon {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
-  }
-  
-  ion-list {
-    margin-bottom: 15px;
-  }
-  
+  position: relative;
+  background-color: #3c3c3c; /* Make sure the background is transparent */
+  border: 25px solid #3c3c3c; /* Border color for the outer border */
+  box-shadow: 0 0 10px #3c3c3c; /* Optional: add a shadow effect */
+}
+
+.main-content {
+  position: relative;
+  overflow: hidden; /* Hide overflow to ensure rounded corners */
+  box-sizing: border-box; /* Include border and padding in the element's total width and height */
+  border-radius: 25px #fff; /* Inner border radius */
+}
+
+.select-code {
+  padding-left: 16px;
+  text-align: start;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  padding-top: 25px;
+}
+
+ion-searchbar {
+  height: 65px; /* Adjust this value to increase the height */
+  border-radius: 20px; /* Rounded corners */
+  border: 2px solid #0974B9; /* Add a border with color */
+  width: 90%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the search bar horizontally */
+  --background: transparent; /* Remove default background color */
+  --box-shadow: none; /* Remove default box shadow */
+  --padding-start: 16px; /* Adjust padding inside the search bar */
+  --padding-end: 16px; /* Adjust padding inside the search bar */
+  --icon-color: #0974B9; /* Change the color of the search icon */
+}
+
+.rec-search {
+  margin-top: 15px;
+}
+
+.recent-search-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+ion-list {
+  margin-bottom: 15px;
+}
+
+ion-item {
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Align items vertically in the center */
+  --inner-padding-end: 0px; /* Remove padding on the end for better alignment */
+}
+
+ion-thumbnail {
+  margin-right: 10px; /* Space between the flag and the text */
+}
+
+ion-label {
+  display: flex; /* Use Flexbox within the label */
+  justify-content: space-between; /* Space out name and code */
+  flex: 1; /* Allow label to take up available space */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.country-code {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right end in a flex container */
+  margin-right: 20px;
+}

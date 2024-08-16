@@ -1,0 +1,61 @@
+ion-header {
+    --ion-background-color: #0974B9; /* Header background color */
+    --background: #0974B9; /* Fallback background color */
+}
+    ion-toolbar {
+      height: 80px; /* Increase the height of the header */
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the content vertically */
+      padding: 0 12px; /* Optional: Add padding inside the toolbar */
+    }
+  
+    ion-buttons {
+      position: absolute;
+      left: 16px; /* Position the back button on the left with padding */
+      display: flex;
+      align-items: center;
+    }
+      ion-button {
+        display: flex;
+        align-items: center;
+        color: white; /* Text and icon color */
+      }
+        .back-icon {
+          width: 48px;  /* Icon size */
+          height: 48px; /* Icon size */
+          margin-right: 15px; /* Space between icon and text */
+        }
+  
+        ion-label {
+          font-size: 20px;
+          font-weight: bold;
+          color: white; /* Text color */
+        }
+      
+    
+  
+  
+  ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure it takes full height to center vertically */
+    padding: 15px; /* Add padding to the entire page */
+  }
+  
+  .custom-image-class, ion-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* Example size, adjust as needed */
+    height: auto; /* Example size, adjust as needed */
+    padding-top: 25%;
+  }
+
+  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  

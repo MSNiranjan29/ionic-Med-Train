@@ -11,6 +11,7 @@ export class CountryCodeModalPage {
   searchTerm: string = '';
   recentSearches: string[] = []; // Add this line to define recentSearches
   countries: Country[] = [
+    { name: 'India', code: '+91', flag: 'assets/flags/in.png' },
     { name: 'Afghanistan', code: '+93', flag: 'assets/flags/af.png' },
     { name: 'Albania', code: '+355', flag: 'assets/flags/al.png' },
     { name: 'Algeria', code: '+213', flag: 'assets/flags/dz.png' },
