@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-an-account',
@@ -10,28 +12,59 @@ import { NavController } from '@ionic/angular';
 export class CreateAnAccountPage {
   createAnAccountForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private navCtrl: NavController) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private navCtrl: NavController,
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.createAnAccountForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       rePassword: ['', Validators.required]
-    });
+    }, { validator: CreateAnAccountPage.passwordMatchValidator });
+  }
+
+  static passwordMatchValidator(formGroup: FormGroup) {
+    const password = formGroup.get('password')?.value;
+    const rePassword = formGroup.get('rePassword')?.value;
+    return password === rePassword ? null : { mismatch: true };
   }
 
   onCreateAccount() {
     if (this.createAnAccountForm.valid) {
-      // Handle create account logic here
-      console.log('Account creation successful!');
+      const { name, email, password } = this.createAnAccountForm.value;
+
+      // Make POST request to backend
+      this.http.post('http://localhost:5000/api/create-an-account', { name, email, password, rePassword: password })
+        .subscribe({
+          next: (response) => {
+            console.log('Account creation successful!', response);
+            this.router.navigate(['/create-an-account1']);
+          },
+          error: (error) => {
+            console.error('Error creating account:', error);
+            alert('Failed to create account. Please check the console for details.');
+          }
+        });
+    } else {
+      console.log('Form is invalid:', this.createAnAccountForm.errors);
+      alert('Please fill out all fields correctly.');
     }
   }
 
   onBack() {
-    // Implement the action for the back button
     this.navCtrl.back();
   }
+
   onGetStarted() {
-    // Handle forgot password logic here
-    this.navCtrl.navigateForward('/search-result');
+    // Ensure the form is submitted before navigating
+    if (this.createAnAccountForm.valid) {
+      this.onCreateAccount(); // Submit the form
+    } else {
+      console.log('Form is invalid:', this.createAnAccountForm.errors);
+      alert('Please fill out all fields correctly.');
+    }
   }
 }

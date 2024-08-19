@@ -21,52 +21,51 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./template/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./template/dashboard/dashboard.module').then(m => m.DashboardPageModule)
   },
   {
     path: 'search',
-    loadChildren: () => import('./template/search/search.module').then( m => m.SearchPageModule)
+    loadChildren: () => import('./template/search/search.module').then(m => m.SearchPageModule)
   },
   {
     path: 'notification',
-    loadChildren: () => import('./template/notification/notification.module').then( m => m.NotificationPageModule)
+    loadChildren: () => import('./template/notification/notification.module').then(m => m.NotificationPageModule)
   },
   {
     path: 'contact',
-    loadChildren: () => import('./template/contact/contact.module').then( m => m.ContactPageModule)
+    loadChildren: () => import('./template/contact/contact.module').then(m => m.ContactPageModule)
   },
   {
     path: 'create-an-account',
-    loadChildren: () => import('./template/create-an-account/create-an-account.module').then( m => m.CreateAnAccountPageModule)
+    loadChildren: () => import('./template/create-an-account/create-an-account.module').then(m => m.CreateAnAccountPageModule)
   },
-  
   {
     path: 'forgot',
-    loadChildren: () => import('./template/forgot/forgot.module').then( m => m.ForgotPageModule)
+    loadChildren: () => import('./template/forgot/forgot.module').then(m => m.ForgotPageModule)
   }, 
   {
     path: 'search-result',
-    loadChildren: () => import('./template/search-result/search-result.module').then( m => m.SearchResultPageModule)
+    loadChildren: () => import('./template/search-result/search-result.module').then(m => m.SearchResultPageModule)
   },
   {
     path: 'search-details',
-    loadChildren: () => import('./template/search-details/search-details.module').then( m => m.SearchDetailsPageModule)
+    loadChildren: () => import('./template/search-details/search-details.module').then(m => m.SearchDetailsPageModule)
   },
   {
     path: 'create-an-account1',
-    loadChildren: () => import('./template/create-an-account1/create-an-account1.module').then( m => m.CreateAnAccount1PageModule)
+    loadChildren: () => import('./template/create-an-account1/create-an-account1.module').then(m => m.CreateAnAccount1PageModule)
   },
   {
     path: 'country-code-modal',
-    loadChildren: () => import('./template/country-code-modal/country-code-modal.module').then( m => m.CountryCodeModalPageModule)
+    loadChildren: () => import('./template/country-code-modal/country-code-modal.module').then(m => m.CountryCodeModalPageModule)
   },
   {
     path: 'bookmark',
-    loadChildren: () => import('./template/bookmark/bookmark.module').then( m => m.BookmarkPageModule)
+    loadChildren: () => import('./template/bookmark/bookmark.module').then(m => m.BookmarkPageModule)
   },
   {
     path: 'archived-courses',
-    loadChildren: () => import('./template/archived-courses/archived-courses.module').then( m => m.ArchivedCoursesPageModule)
+    loadChildren: () => import('./template/archived-courses/archived-courses.module').then(m => m.ArchivedCoursesPageModule)
   }
 ];
 
