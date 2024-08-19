@@ -13,7 +13,7 @@
     <!-- Form container below the blue container -->
     <div class="form-container">
       <h2>Login</h2>
-      <form [formGroup]="contactForm" (ngSubmit)="onLogin()">
+      <form [formGroup]="contactForm" (ngSubmit)="onNext()">
         <ion-item class="custom-input">
           <ion-label position="floating">Enter Email</ion-label>
           <ion-input formControlName="username"></ion-input>
@@ -27,7 +27,7 @@
           <button class="forgot-password-button" (click)="onForgotPassword()">Forgot Password?</button>
         </div>
         <div class="button-container">
-          <ion-button expand="block" class="next-button" color=" "(click)="onNext()">Next</ion-button>
+          <ion-button expand="block" class="next-button" color=" " (click)="onNext()">Next</ion-button>
         </div>
       </form>
     </div>
