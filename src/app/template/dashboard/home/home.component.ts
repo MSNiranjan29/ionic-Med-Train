@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,13 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+  constructor(
+    private alertController: AlertController,
+    private router: Router // Inject Router
+  ) { }
 
   ngOnInit() {
-    // Call the method to present the alert after a delay
-    this.showLoginAlertWithDelay();
+    this.checkUserStatus();
   }
 
   async presentLoginAlert() {
@@ -26,9 +29,9 @@ export class HomeComponent implements OnInit {
         {
           text: 'Login Now',
           handler: () => {
-            // Handle login action
-            console.log('Login Now clicked');
+            // Redirect to the contact page
             this.dismissOverlay();
+            this.router.navigate(['/contact']); // Use Router to navigate
           },
         },
         {
@@ -36,7 +39,6 @@ export class HomeComponent implements OnInit {
           role: 'cancel',
           cssClass: 'later-login',
           handler: () => {
-            console.log('Login Later clicked');
             this.dismissOverlay();
           },
         },
@@ -50,6 +52,15 @@ export class HomeComponent implements OnInit {
   dismissOverlay() {
     // Hide the overlay
     document.body.classList.remove('show-overlay');
+  }
+
+  checkUserStatus() {
+    const user = localStorage.getItem('user');
+    console.log('User found in localStorage:', user); // Debugging line
+    // Only show the alert if the user is not logged in
+    if (!user) {
+      this.showLoginAlertWithDelay();
+    }
   }
 
   showLoginAlertWithDelay() {

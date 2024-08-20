@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccountComponent } from './account.component';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+// Remove the import of AccountComponent here
+// import { AccountComponent } from './account.component';
 
 @NgModule({
-  declarations: [AccountComponent],
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule
   ],
-  exports: [AccountComponent] // Export component if needed in other modules
+  declarations: [] // Remove AccountComponent from declarations
 })
-export class AccountModule { }
+export class AccountModule {}

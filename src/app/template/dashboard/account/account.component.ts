@@ -7,15 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
-  user: { name: string; email: string; phoneNumber: string } | null = null;
+  user: { name: string; email: string; phoneNumber?: string } | null = null;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Retrieve user details from localStorage or a service
+    // Retrieve user details from localStorage
     const userData = localStorage.getItem('user');
     if (userData) {
       this.user = JSON.parse(userData);
+    } else {
+      // Handle case where user data is not found
+      console.error('No user data found in localStorage');
+      this.router.navigate(['/contact']); // Redirect to contact page if user data is not found
     }
   }
 

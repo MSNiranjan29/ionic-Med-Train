@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpInterceptorService } from './http.interceptor'; // Ensure this path is correct
+import { SQLite } from '@ionic-native/sqlite/ngx'; // Import SQLite
+import { NativeStorage } from '@ionic-native/native-storage/ngx'; // Optional, for additional storage
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,9 @@ import { HttpInterceptorService } from './http.interceptor'; // Ensure this path
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true } // Intercepts HTTP requests
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }, // Intercepts HTTP requests
+    SQLite, // Add SQLite provider
+    NativeStorage, // Optional, if you need additional storage capabilities
   ],
   bootstrap: [AppComponent],
 })

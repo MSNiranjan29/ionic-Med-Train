@@ -33,6 +33,18 @@ ion-content {
   border: 2px solid white; /* White border */
   font-size: 18px;
   z-index: 2;
+  padding: 0;
+  width: 40px; /* Set a fixed width for the button */
+  height: 40px; /* Set a fixed height for the button */
+}
+
+.back-button img {
+  width: 100%; /* Ensure image takes up the full width of the button */
+  height: auto; /* Maintain aspect ratio */
+  filter: none; /* Remove any filters */
+  opacity: 1; /* Ensure full opacity */
+  background: none; /* Remove background if set */
+  border-radius: 50%; /* Make sure the image fits within the rounded button */
 }
 
 .white-container {
@@ -64,7 +76,6 @@ ion-content {
 }
 
 h2 {
-
   margin-top: 40px;
   color: white;
   text-align: left;
@@ -117,11 +128,13 @@ ion-item {
   margin-top: 50px;
   border-radius: 5px;
   background-color: #EA6B23;
-  
 }
 
 ion-button.next-button {
   width: 100%;
   font-weight: bold;
   height: 50px;
+  --background: #EA6B23; /* Set the button background color */
+  --background-activated: #d96320; /* Button background when active */
+  --background-focused: #d96320; /* Button background when focused */
 }

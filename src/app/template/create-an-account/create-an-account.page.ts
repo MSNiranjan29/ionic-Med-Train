@@ -37,17 +37,22 @@ export class CreateAnAccountPage {
       const { name, email, password } = this.createAnAccountForm.value;
 
       // Make POST request to backend
-      this.http.post('http://localhost:5000/api/create-an-account', { name, email, password, rePassword: password })
-        .subscribe({
-          next: (response) => {
-            console.log('Account creation successful!', response);
-            this.router.navigate(['/create-an-account1']);
-          },
-          error: (error) => {
-            console.error('Error creating account:', error);
-            alert('Failed to create account. Please check the console for details.');
-          }
-        });
+      this.http.post('http://localhost:5000/api/create-an-account', { 
+        name, 
+        email, 
+        password, 
+        rePassword: password // Ensure this field matches what the backend expects
+      })
+      .subscribe({
+        next: (response) => {
+          console.log('Account creation successful!', response);
+          this.router.navigate(['/create-an-account1']); // Navigate to mobile number page
+        },
+        error: (error) => {
+          console.error('Error creating account:', error);
+          alert('Failed to create account. Please check the console for details.');
+        }
+      });
     } else {
       console.log('Form is invalid:', this.createAnAccountForm.errors);
       alert('Please fill out all fields correctly.');

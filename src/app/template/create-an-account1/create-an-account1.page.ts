@@ -31,9 +31,15 @@ export class CreateAnAccount1Page implements OnInit {
   onSend() {
     if (this.mobileForm.valid) {
       const { countryCode, mobile } = this.mobileForm.value;
+      const email = localStorage.getItem('email'); // Retrieve email from local storage or other means
+
+      if (!email) {
+        console.error('Email is not available');
+        return;
+      }
 
       // Make POST request to backend
-      this.http.post('http://localhost:5000/api/create-an-account1', { mobNumber: `${countryCode} ${mobile}` })
+      this.http.post('http://localhost:5000/api/update-mobile-number', { email, mobNumber: `${countryCode} ${mobile}` })
         .subscribe({
           next: (response) => {
             console.log('Mobile number submitted successfully!', response);
@@ -74,6 +80,6 @@ export class CreateAnAccount1Page implements OnInit {
   }
 
   navigateToHome() {
-    this.router.navigate(['/dashboard/home']); // Adjust the route path as necessary
+    this.router.navigate(['/contact']); // Adjust the route path as necessary
   }
 }

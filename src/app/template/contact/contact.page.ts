@@ -51,6 +51,6 @@ export class ContactPage {
   }
 
   onBack() {
-    this.navCtrl.back();
+    this.navCtrl.navigateForward('/welcome');
   }
 }
