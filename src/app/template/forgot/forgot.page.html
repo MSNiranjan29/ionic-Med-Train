@@ -1,9 +1,11 @@
 <ion-content>
   <div class="outer-container">
     <div class="blue-container">
-      <ion-button class="back-button" (click)="onBack()">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </ion-button>
+      <div class="back-button">
+        <button (click)="onBack()" class="back-button">
+          <img src="/assets/search/back.png" alt="search icon" class="recent-search-icon"/>
+        </button>
+      </div>
       <div class="white-container">
         <img src="/assets/logo.png" alt="Logo" class="logo-image">
       </div>
