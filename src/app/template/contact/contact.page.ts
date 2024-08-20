@@ -27,7 +27,7 @@ export class ContactPage {
       const { username, password } = this.contactForm.value;
   
       // Make a POST request to the backend API
-      this.http.post('http://localhost:5000/api/login', { email: username, password })
+      this.http.post('https://purple-knives-own.loca.lt/api/login', { email: username, password })
         .subscribe({
           next: (response: any) => {
             console.log('Login successful!', response);

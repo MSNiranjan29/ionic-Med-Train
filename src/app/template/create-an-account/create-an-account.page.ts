@@ -37,7 +37,7 @@ export class CreateAnAccountPage {
       const { name, email, password } = this.createAnAccountForm.value;
 
       // Make POST request to backend
-      this.http.post('http://localhost:5000/api/create-an-account', { 
+      this.http.post('https://purple-knives-own.loca.lt/api/create-an-account', { 
         name, 
         email, 
         password, 

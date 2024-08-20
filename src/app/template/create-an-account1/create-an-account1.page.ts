@@ -39,7 +39,7 @@ export class CreateAnAccount1Page implements OnInit {
       }
 
       // Make POST request to backend
-      this.http.post('http://localhost:5000/api/update-mobile-number', { email, mobNumber: `${countryCode} ${mobile}` })
+      this.http.post('https://purple-knives-own.loca.lt/api/update-mobile-number', { email, mobNumber: `${countryCode} ${mobile}` })
         .subscribe({
           next: (response) => {
             console.log('Mobile number submitted successfully!', response);
